@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-item{
+  margin: 0 9rem;
+}
+
+.letra{
+  font-weight: bolder;
+}
+
+nav{
+  border: solid rgb(252, 252, 252);
+  border-radius: 1rem;
+  border-style: dashed;
+
+}
