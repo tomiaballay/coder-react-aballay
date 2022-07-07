@@ -1,7 +1,7 @@
-import './App.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function  App () {
+function  NavBar () {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light App">
         <a className="navbar-brand" href="#">M I M A D A S</a>
@@ -25,3 +25,5 @@ function  App () {
       </nav>
     );
 }
+
+export default NavBar;
