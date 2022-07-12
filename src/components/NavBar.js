@@ -1,10 +1,11 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CartWidget from './CartWidget';
 
 function  NavBar () {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light App">
-        <a className="navbar-brand" href="#">M I M A D A S</a>
+        <a className = "navbar-brand" href="#">M I M A D A S</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -19,7 +20,10 @@ function  NavBar () {
             <li className="nav-item">
               <a className="nav-link" href="#">DUDAS</a>
             </li>
-       
+            <li>
+              <CartWidget />
+            </li>
+
           </ul>
         </div>
       </nav>

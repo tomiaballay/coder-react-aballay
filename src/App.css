@@ -51,3 +51,23 @@ nav{
   border-style: dashed;
 
 }
+
+
+svg{
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.counter_item{
+  margin: auto;
+  padding: auto;
+}
+
+.counter_button{
+  background-color: rgb(240, 126, 160);
+  margin: 1rem 0;
+}
+
+.card{
+  margin: 0 81rem 0 0;
+}
