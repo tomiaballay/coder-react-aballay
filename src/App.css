@@ -71,3 +71,14 @@ svg{
 .card{
   margin: 0 81rem 0 0;
 }
+
+.caja{
+  text-align: center;
+  justify-content: space-evenly;
+  border:solid rgb(245, 236, 236) ;
+  margin: 1rem;
+  padding: 1rem
+  
+
+  ;
+}

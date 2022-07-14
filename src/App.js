@@ -6,11 +6,11 @@ import CartWidget from "./components/CartWidget"
 import ItemCount from './components/ItemCount';
 
 
-
 function  App () {
   return (
     <>
       <NavBar />
+      <ItemListContainer greating="Hola coder"/>
     </>
   )
 }
