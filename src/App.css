@@ -73,12 +73,12 @@ svg{
 }
 
 .caja{
+  border-radius: 1rem;
+  margin: 0 10rem;
   text-align: center;
   justify-content: space-evenly;
   border:solid rgb(245, 236, 236) ;
   margin: 1rem;
   padding: 1rem
-  
-
   ;
 }

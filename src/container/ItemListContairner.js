@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import ItemCount from "./ItemCount";
-import ItemList from "./ItemList";
+import ItemCount from "../components/ItemCount";
+import ItemList from "../components/ItemList";
 
 
-const productos = [
+ const productos = [
     {"nombre": "Shampoo", "precio": 500, "id": 1, "detalle": "Shampoo rejuvenecedor para todos los cabellos"},
     {"nombre": "Acondicionador", "precio": 700, "id":2, "detalle": "Acondicionador rejuvenecedor para todos los cabellos"},
     {"nombre": "Crema", "precio": 800, "id": 3,"detalle": "Crema rejuvenecedora para todas las pieles"},
