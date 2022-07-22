@@ -61,6 +61,7 @@ svg{
 .counter_item{
   margin: auto;
   padding: auto;
+
 }
 
 .counter_button{
@@ -81,4 +82,8 @@ svg{
   margin: 1rem;
   padding: 1rem
   ;
+}
+
+.subt{
+
 }
