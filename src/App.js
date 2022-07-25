@@ -8,9 +8,11 @@ import ItemDetailContainer from './container/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
+
 function  App () {
   return (
    <>
+   <div style={{fontFamily:"nunito"}}>
      <BrowserRouter>
       <NavBar />
       <Routes>
@@ -21,6 +23,7 @@ function  App () {
       {/*<ItemListContainer greating="Hola coder"/>*/}
       {/*<ItemDetailContainer /> */}
     </BrowserRouter>
+    </div>
    </>
   )
 }
