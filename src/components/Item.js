@@ -3,9 +3,7 @@ import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 
 
-const onAdd = (param) => {
-  alert("La cantidad comprada es ${param}");
-};
+
 
 const Item = ({ info }) => {
   return (
@@ -18,7 +16,7 @@ const Item = ({ info }) => {
       <button>DETALLE DEL PRODUCTO</button>
       </Link>
       <div className="subtr">
-        <ItemCount initial={1} stock={5} onAdd={onAdd} />
+       
       </div>
     </div>
   );
