@@ -2,10 +2,9 @@ import React from "react";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 
-
-
-
 const Item = ({ info }) => {
+
+
   return (
     <div className="caja">
         <h1>{info.nombre}</h1>
