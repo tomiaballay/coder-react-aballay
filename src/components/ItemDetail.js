@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ItemCount from "./ItemCount";
-import Item from "./Item";
 import { Link } from "react-router-dom";
-import { UseCartContext } from "../context/CartContext";
+import { CartContext } from "../context/CartContext";
+
+
 
 const ItemDetail = ({ data }) => {
-  const [goToCart, setGoToCart] = useState(false);
-  const {addProduct} = UseCartContext();
+  const context = useContext(CartContext)
+  const [goToCart, setGoToCart] = useState(0);
+  
 
-  const onAdd = (quantity) => {
-    setGoToCart(true);
-    addProduct(data, quantity)
+  const onAdd = (qty) => {
+    
+    setGoToCart(qty);
+    context.addItem(data, qty);
   };
 
   return (
@@ -29,5 +32,6 @@ const ItemDetail = ({ data }) => {
     </div>
   );
 };
+
 
 export default ItemDetail;

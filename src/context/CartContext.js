@@ -1,37 +1,56 @@
-import React, { useState, useContext } from "react";
+import { createContext, useState } from "react";
 
-const CartContext = React.createContext([]);
+export const CartContext = createContext();
 
- export const UseCartContext = () => useContext(CartContext);
+const CartContextProvider = ({ children }) => {
+  const [cartList, setCartList] = useState([]);
 
-const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
+  const addItem = (item, qty) => {
+    let newCart = [];
+    let isInCart = cartList.find((productos) => productos.id === item.id);
 
-    const addProduct = (item, newQuantity) => {
-        const newCart = cart.filter (prod => prod.id !== item.id);
-        newCart.push ({ ...item, quantity: newQuantity});
-        setCart(newCart)
+    if (isInCart) {
+      isInCart.qty += qty;
+      newCart = [...cartList];
+    } else {
+      isInCart = { ...item, qty: qty };
+      newCart = [...cartList, isInCart];
     }
+    setCartList(newCart);
+  };
 
-    const clearCart = () => setCart([]);
+  const removeItem = (id) => {
+    let newList = cartList.filter((item) => item.id !== id);
+    setCartList(newList);
+  };
 
-    const isInCart = (id) => cart.find(product => product.id === id) ? true : false;
+  const clear = () => {
+    setCartList([]);
+  };
 
-    const removeProduct = (id) => setCart (cart.filter(product => product.id !== id));
+  const sumQty = () => {
+    let total = 0;
 
+    cartList.map((productos) => (total += productos.qty));
 
+    return total;
+  };
 
+  const sumPrice = () => {
+    let total = 0;
 
-    return (
-        <CartContext.Provider value={{
-            clearCart,
-            isInCart,
-            removeProduct,
-            addProduct
-        }}>
-            {children}
-        </CartContext.Provider>
-    )
-}
+    cartList.map((productos) => (total += productos.precio * productos.qty));
 
-export default CartProvider;
+    return total;
+  };
+
+  return (
+    <CartContext.Provider
+      value={{ cartList, addItem, removeItem, clear, sumQty, sumPrice }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+};
+
+export default CartContextProvider;
