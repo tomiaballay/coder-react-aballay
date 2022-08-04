@@ -13,10 +13,10 @@ function  NavBar () {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <NavLink className="nav_link"  to="/categoria/cabello"> CABELLO <span class="sr-only"></span></NavLink>
+              <NavLink className="nav_link"  to="/category/cabello"> CABELLO <span class="sr-only"></span></NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/categoria/aroma"> AROMA </NavLink>
+              <NavLink className="nav-link" to="/category/aroma"> AROMA </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/item">DUDAS</NavLink>

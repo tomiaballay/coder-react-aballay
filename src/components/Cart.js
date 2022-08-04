@@ -8,9 +8,7 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const cartContext = useContext(CartContext);
 
-  let subtotal = cartContext.sumPrice();
-  let iva = (cartContext.sumPrice() * 21) / 100;
-  let total = subtotal + iva;
+ 
 
   return (
     <>
@@ -19,7 +17,7 @@ const Cart = () => {
           return (
             <div className="cartContainer">
               <div className="cartCard">
-             
+                
                 <h2 className="cartName">{item.nombre}</h2>
                 <p className="cartPriceUnidad">
                   Precio por unidad: <br />${item.precio}
@@ -55,13 +53,7 @@ const Cart = () => {
             <button className="cartClear" onClick={cartContext.clear}>
               Clear Items{" "}
             </button>
-            <div className="total">
-              <p>Subtotal: ${subtotal} </p>
-              <p>IVA(21%): ${iva} </p>
-              <p>
-                <b>Total: ${total}</b>
-              </p>
-            </div>
+
           </div>
         </div>
       )}

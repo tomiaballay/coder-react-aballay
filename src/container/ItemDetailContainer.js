@@ -13,25 +13,28 @@ const productos = [
     {id: 5, nombre: "PERFUME", precio: 1500, detalle: "Perfume de alta calidad", category: "aroma"},
   ];
  
-export const ItemDetailContainer = () => {
-    const [data, setData] = useState({});
-    const { detalleId } = useParams();
-
+  const ItemDetailContainer = ({ greating }) => {
+    const [data, setData] = useState(false);
+    const { id } = useParams();
+  
     useEffect(() => {
-        const getData = new Promise(resolve => {
-            setTimeout(() => {
-                resolve (productos);
-            }, 3000);
-        });
-
-        getData.then(res => setData(res.filter(productos => productos.id === parseInt(detalleId))[0]));
-    }, )
-
-
+      const getData = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(productos[id]);
+        }, 2000);
+      });
+      getData.then((res) => setData(res));
+    }, [id]);
+  
     return (
-        <ItemDetail data={data}/>
-    )
-}
+      <>
+       <div>{greating}</div>
+        <div>
+          <ItemDetail data={data} />
+        </div>
+      </>
+    );
+  };
 
 export default ItemDetailContainer;
 

@@ -7,7 +7,7 @@ const CartContextProvider = ({ children }) => {
 
   const addItem = (item, qty) => {
     let newCart = [];
-    let isInCart = cartList.find((productos) => productos.id === item.id);
+    let isInCart = cartList.find((e) => e.id === item.id);
 
     if (isInCart) {
       isInCart.qty += qty;
@@ -31,7 +31,7 @@ const CartContextProvider = ({ children }) => {
   const sumQty = () => {
     let total = 0;
 
-    cartList.map((productos) => (total += productos.qty));
+    cartList.map((e) => (total += e.qty));
 
     return total;
   };
@@ -39,7 +39,7 @@ const CartContextProvider = ({ children }) => {
   const sumPrice = () => {
     let total = 0;
 
-    cartList.map((productos) => (total += productos.precio * productos.qty));
+    cartList.map((e) => (total += e.price * e.qty));
 
     return total;
   };
