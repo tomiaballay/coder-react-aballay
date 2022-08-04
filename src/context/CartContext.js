@@ -39,7 +39,7 @@ const CartContextProvider = ({ children }) => {
   const sumPrice = () => {
     let total = 0;
 
-    cartList.map((e) => (total += e.price * e.qty));
+    cartList.map((e) => (total += e.precio * e.qty));
 
     return total;
   };
