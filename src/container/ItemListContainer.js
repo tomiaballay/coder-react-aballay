@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "../components/ItemList";
 import { useParams } from "react-router-dom";
-import { db } from "../utils/firebaseConfig";
-import { collection, getDocs } from "firebase/firestore";
+import { firestoreFetch } from "../utils/firestoreFetch";
 
 
 const productos = [
@@ -17,37 +16,20 @@ const productos = [
 
 function ItemListContainer() {
   const [data, setData] = useState([]);
-  const { id } = useParams();
+  const { idCategory } = useParams();
+
+
+      useEffect(() => {
+        firestoreFetch(idCategory)
+        .then(result => setData(result))
+        .catch(err => console.log (err));
+  }, [idCategory]);
 
   useEffect(() => {
-     //if (id === undefined) {
-      //const getData = new Promise((resolve) => {
-        //setTimeout(() => {
-          //resolve(productos);
-        //}, 2000);
-     // });
-      //getData.then((res) => setData(res));
-    //} else {
-      //const getData = new Promise((resolve) => {
-        //setTimeout(() => {
-          //resolve(productos.filter((item) => item.categoryId === parseInt(id)));
-        //}, 2000);
-      //});
-      //getData.then((res) => setData(res));
-
-      const firestoreFetch = async () => {
-        const querySnapshot = await getDocs(collection(db, "productos"));
-        const dataFromFirestore = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data()
-        }))
-        return dataFromFirestore
-        }
-      
-      firestoreFetch ()
-      .then(result => setData(result))
-      .catch (err => console.log(err))
-  }, [id]);
+    return (() =>{
+      setData([]);
+    })
+  },[])
 
   return (
     <>

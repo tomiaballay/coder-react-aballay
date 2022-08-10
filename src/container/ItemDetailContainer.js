@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import ItemDetail from "../components/ItemDetail";
 import { useParams } from "react-router-dom";
+import { firestoreFetchOne } from "../utils/firestoreFetch";
 
 
 
@@ -15,16 +16,15 @@ const productos = [
  
   const ItemDetailContainer = ({ greating }) => {
     const [data, setData] = useState(false);
-    const { id } = useParams();
-  
+    const { idItem } = useParams();
+
     useEffect(() => {
-      const getData = new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(productos[id]);
-        }, 2000);
-      });
-      getData.then((res) => setData(res));
-    }, [id]);
+      firestoreFetchOne (idItem)
+      .then(result => setData(result))
+      .catch(err => console.log(err))
+    },[idItem])
+  
+    
   
     return (
       <>
