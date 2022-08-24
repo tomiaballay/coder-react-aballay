@@ -14,34 +14,8 @@ const Cart = () => {
   let iva = (cartContext.sumPrice() * 21) / 100;
   let total = subtotal + iva;
 
-  const createOrder = () => {
-    let itemsForDB = cartContext.cartList.map (item => ({
-      id:item.idItem,
-      nombre: item.nameItem,
-      precio:item.costItem,
-      qty: item.qtyItem
-    }));
-    let order = {
-      buyer : {
-        email: "leonardo@dicaprio.com",
-        name: "Leo Dicaprio",
-        phone: "3457345734"
-      },
-      date: serverTimestamp (),
-      items: itemsForDB,
-      total: {total}
-    }
-    console.log(order)
 
-    const createOrderInFirestore = async () => {
-      const newOrderRef = doc (collection (db, "orders"))
-      await setDoc (newOrderRef, order)
-      return newOrderRef
-    }
-    createOrderInFirestore()
-    .then (result => alert("Su orden fue creada. ID=" + result.id))
-    .catch(e => console.log (e))
-  }
+ 
 
   return (
     <>
@@ -86,7 +60,7 @@ const Cart = () => {
             <button className="cartClear" onClick={cartContext.clear}>
               Clear Items{" "}
             </button>
-            <button className="cartClear" onClick={createOrder}>
+            <button className="cartClear" onClick>
               Terminar compra
             </button>
             <div className="total">

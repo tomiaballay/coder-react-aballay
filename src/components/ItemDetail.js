@@ -5,7 +5,7 @@ import { CartContext } from "../context/CartContext";
 
 
 
-const Item = ({ info }) => {
+export const ItemDetail = ({ data }) => {
   const context = useContext(CartContext)
   const [goToCart, setGoToCart] = useState(0);
   
@@ -15,29 +15,27 @@ const Item = ({ info }) => {
       ? alert(`La cantidad a comprar es ${qty}`)
       : alert(`La cantidad es incorrecta`);
     setGoToCart(qty);
-    context.addItem(info, qty);
+    context.addItem(data, qty);
   };
 
   return (
     <div className="caja">
-      <h1>{info.nombre}</h1>
-      <h1>{info.image}</h1>
-      <p>{info.precio}</p>
+      <h1>{data.nombre}</h1>
+      <h1>{data.image}</h1>
+      <p>{data.precio}</p>
       {
         goToCart 
          ? <Link to="/cart"> Finalizar Compra </Link>
          : <ItemCount initial={1} stock={5} onAdd={onAdd} />
         }
-      <p>{info.detalle}</p>
+      <p>{data.detalle}</p>
 
       <button>DETALLE DEL PRODUCTO</button>
     </div>
   );
 };
 
-const ItemDetail = ({ data }) => {
-  return <>{data ? <Item key={data.id} info={data} /> : "Cargando..."}</>;
-};
+
 
 
 export default ItemDetail;
