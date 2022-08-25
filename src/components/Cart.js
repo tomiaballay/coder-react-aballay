@@ -1,11 +1,11 @@
 import React from "react";
 import { CartContext } from "../context/CartContext";
 import { useContext } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ItemListContainer from "../container/ItemListContainer";
 import { Link } from "react-router-dom";
-import { collection, serverTimestamp, setDoc, doc, } from "firebase/firestore";
-import {db} from "../utils/firebaseConfig"
+import { collection, addDoc, } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
+
+
 
 const Cart = () => {
   const cartContext = useContext(CartContext);
@@ -13,10 +13,31 @@ const Cart = () => {
   let subtotal = cartContext.sumPrice();
   let iva = (cartContext.sumPrice() * 21) / 100;
   let total = subtotal + iva;
-
-
  
+ 
+  // *** ORDEN ****
+  // const order = {
+	//	buyer: {
+	//		name: "Pablo",
+	//		email: "Pablo@gmail.com",
+	//		phone: "123123",
+	//		address: "asdd",
+	//	},
+	//	items: cartContext.cartList.map((item) => ({
+	//		id: item.id,
+	//		title: item.nombre,
+	//		price: item.precio,
+	//		quantity: item.qty,
+	//	})),
+	//	total: total(),
+	//};
 
+	// const handleClick = () => {
+	//	const db = getFirestore();
+	//	const ordersCollection = collection(db, "orders");
+	//	addDoc(ordersCollection, order).then(({ id }) => console.log(id));
+	// };
+ 
   return (
     <>
       {cartContext.cartList.length > 0 ? (

@@ -5,6 +5,7 @@ import { CartContext } from "../context/CartContext";
 
 
 
+
 export const ItemDetail = ({ data }) => {
   const context = useContext(CartContext)
   const [goToCart, setGoToCart] = useState(0);
@@ -30,7 +31,7 @@ export const ItemDetail = ({ data }) => {
         }
       <p>{data.detalle}</p>
 
-      <button>DETALLE DEL PRODUCTO</button>
+      
     </div>
   );
 };

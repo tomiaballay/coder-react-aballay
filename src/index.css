@@ -38,25 +38,28 @@ h1 {
 
 .cartCard {
   width: 90vw;
-  border: solid;
+  border: solid rgb(242, 190, 230);
   display: flex;
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  background-color: white;
+  background-color: rgb(227, 125, 239);
   justify-content: space-between;
   padding: 2vh;
   border-radius: 1vh;
+
 }
 
 .cartRemove,
 .cartClear {
   height: auto;
   width: auto;
-  padding: 1vw;
+  padding:1vw;
   font-size: 2vh;
   border-radius: 1vh;
   margin: 1vh;
+  background-color: rgb(227, 125, 239);
+  border: solid rgb(242, 190, 230);
 }
 
 .cartUPD {
@@ -64,32 +67,46 @@ h1 {
   display: flex;
   align-items: center;
   flex-direction: column;
+  
 }
 
 .cartPriceUnidad {
   font-size: 3vh;
   text-align: right;
+ 
+
+  
 }
 
 .cartName {
   font-size: 3vh;
+
+
 }
 
 .cartQty {
   font-size: 3vh;
+  
+
 }
 
 .cartPrice {
   font-size: 4vh;
+ 
+  
 }
 
 .cartDescripcion {
   padding: 2vh;
   font-size: 2vh;
+  
+
 }
 
 .cartStock {
   font-size: 2.5vh;
+ 
+
 }
 
 .cartCheckout {
@@ -98,6 +115,8 @@ h1 {
   margin: 1vw;
   padding: 1vw;
   font-size: 2vh;
+ 
+
 }
 
 .footer {
@@ -112,11 +131,14 @@ h1 {
   flex-direction: column;
   align-items: flex-end;
   border: solid;
-  background-color: white;
+  
   justify-content: space-between;
   padding: 2vh;
   border-radius: 1vh;
   font-size: 4vh;
+  background-color: rgb(227, 125, 239);
+  border: solid rgb(242, 190, 230);
+
 }
 
 .carritoVacio {
@@ -124,4 +146,14 @@ h1 {
   flex-direction: column;
   align-items: center;
 
+}
+
+.botondetal{
+  margin: 1rem;
+  padding: 1rem;
+  background-color: rgb(253, 122, 187);
+}
+.caja{
+  padding: 0.3rem;
+  background-color: rgb(248, 135, 207);
 }

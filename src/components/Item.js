@@ -10,7 +10,7 @@ const Item = ({ data }) => {
         <h1>{data.image}</h1>
       <p>{data.precio}</p>
       <p>{data.detalle}</p>
-      <Link to={`/item/${data.id}`}>
+      <Link to={`/detalle/${data.id}`}>
       <button>DETALLE DEL PRODUCTO</button>
       </Link>
       <div className="subtr">
